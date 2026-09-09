@@ -1,0 +1,4436 @@
+{
+  "algorithm": "Tabular Q-learning",
+  "rules": {
+    "step": -1,
+    "collision": -3,
+    "hazard": -8,
+    "treat": -0.15,
+    "goal": 35,
+    "gamma": 0.94,
+    "alpha": 0.2
+  },
+  "episodesPerPolicy": 12000,
+  "trainingSeeds": [
+    42,
+    2026,
+    8841
+  ],
+  "evaluationSeed": 91827,
+  "presets": [
+    {
+      "id": "garden",
+      "name": "The little garden",
+      "baseline": {
+        "seed": 91827,
+        "methodology": "Greedy trained policy (uniform random baseline), one rollout from every non-goal cell connected to the goal; episode cap = 4 × cell count. Efficiency is shortest unweighted path length / actual steps; failures score 0. Hazards may justify longer routes.",
+        "reachableStarts": 45,
+        "successes": 21,
+        "successRate": 0.4666666666666667,
+        "meanEfficiency": 0.07144625151161413,
+        "meanSteps": 184.17777777777778,
+        "runs": [
+          {
+            "start": 0,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 8,
+            "efficiency": 0,
+            "return": -490
+          },
+          {
+            "start": 1,
+            "success": true,
+            "steps": 179,
+            "shortestSteps": 7,
+            "efficiency": 0.03910614525139665,
+            "return": -315
+          },
+          {
+            "start": 2,
+            "success": true,
+            "steps": 29,
+            "shortestSteps": 6,
+            "efficiency": 0.20689655172413793,
+            "return": -15
+          },
+          {
+            "start": 3,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 5,
+            "efficiency": 0,
+            "return": -513.4499999999999
+          },
+          {
+            "start": 4,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 4,
+            "efficiency": 0,
+            "return": -492.5999999999999
+          },
+          {
+            "start": 5,
+            "success": true,
+            "steps": 200,
+            "shortestSteps": 3,
+            "efficiency": 0.015,
+            "return": -372.6
+          },
+          {
+            "start": 6,
+            "success": true,
+            "steps": 68,
+            "shortestSteps": 2,
+            "efficiency": 0.029411764705882353,
+            "return": -104
+          },
+          {
+            "start": 7,
+            "success": true,
+            "steps": 70,
+            "shortestSteps": 1,
+            "efficiency": 0.014285714285714285,
+            "return": -100
+          },
+          {
+            "start": 9,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 9,
+            "efficiency": 0,
+            "return": -474.04999999999995
+          },
+          {
+            "start": 13,
+            "success": true,
+            "steps": 50,
+            "shortestSteps": 5,
+            "efficiency": 0.1,
+            "return": -47
+          },
+          {
+            "start": 17,
+            "success": true,
+            "steps": 3,
+            "shortestSteps": 1,
+            "efficiency": 0.3333333333333333,
+            "return": 29
+          },
+          {
+            "start": 18,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 10,
+            "efficiency": 0,
+            "return": -535
+          },
+          {
+            "start": 19,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 11,
+            "efficiency": 0,
+            "return": -486
+          },
+          {
+            "start": 20,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 12,
+            "efficiency": 0,
+            "return": -443.65
+          },
+          {
+            "start": 22,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 6,
+            "efficiency": 0,
+            "return": -488.44999999999993
+          },
+          {
+            "start": 23,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 5,
+            "efficiency": 0,
+            "return": -460.4999999999999
+          },
+          {
+            "start": 24,
+            "success": true,
+            "steps": 29,
+            "shortestSteps": 4,
+            "efficiency": 0.13793103448275862,
+            "return": -18
+          },
+          {
+            "start": 25,
+            "success": true,
+            "steps": 98,
+            "shortestSteps": 3,
+            "efficiency": 0.030612244897959183,
+            "return": -210
+          },
+          {
+            "start": 26,
+            "success": true,
+            "steps": 2,
+            "shortestSteps": 2,
+            "efficiency": 1,
+            "return": 34
+          },
+          {
+            "start": 27,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 11,
+            "efficiency": 0,
+            "return": -514
+          },
+          {
+            "start": 29,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 11,
+            "efficiency": 0,
+            "return": -451.75
+          },
+          {
+            "start": 31,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 7,
+            "efficiency": 0,
+            "return": -507.15
+          },
+          {
+            "start": 34,
+            "success": true,
+            "steps": 173,
+            "shortestSteps": 4,
+            "efficiency": 0.023121387283236993,
+            "return": -356
+          },
+          {
+            "start": 35,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 3,
+            "efficiency": 0,
+            "return": -560.3
+          },
+          {
+            "start": 36,
+            "success": true,
+            "steps": 48,
+            "shortestSteps": 12,
+            "efficiency": 0.25,
+            "return": -48
+          },
+          {
+            "start": 38,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 10,
+            "efficiency": 0,
+            "return": -519.45
+          },
+          {
+            "start": 39,
+            "success": true,
+            "steps": 85,
+            "shortestSteps": 9,
+            "efficiency": 0.10588235294117647,
+            "return": -131.3
+          },
+          {
+            "start": 40,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 8,
+            "efficiency": 0,
+            "return": -503.29999999999995
+          },
+          {
+            "start": 42,
+            "success": true,
+            "steps": 165,
+            "shortestSteps": 6,
+            "efficiency": 0.03636363636363636,
+            "return": -307.15
+          },
+          {
+            "start": 43,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 5,
+            "efficiency": 0,
+            "return": -492
+          },
+          {
+            "start": 44,
+            "success": true,
+            "steps": 7,
+            "shortestSteps": 4,
+            "efficiency": 0.5714285714285714,
+            "return": 27
+          },
+          {
+            "start": 45,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 13,
+            "efficiency": 0,
+            "return": -495.15
+          },
+          {
+            "start": 49,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 9,
+            "efficiency": 0,
+            "return": -506
+          },
+          {
+            "start": 50,
+            "success": true,
+            "steps": 221,
+            "shortestSteps": 8,
+            "efficiency": 0.03619909502262444,
+            "return": -399.45000000000005
+          },
+          {
+            "start": 51,
+            "success": true,
+            "steps": 163,
+            "shortestSteps": 7,
+            "efficiency": 0.04294478527607362,
+            "return": -278
+          },
+          {
+            "start": 53,
+            "success": true,
+            "steps": 126,
+            "shortestSteps": 5,
+            "efficiency": 0.03968253968253968,
+            "return": -199
+          },
+          {
+            "start": 54,
+            "success": true,
+            "steps": 223,
+            "shortestSteps": 14,
+            "efficiency": 0.06278026905829596,
+            "return": -398.65
+          },
+          {
+            "start": 55,
+            "success": true,
+            "steps": 229,
+            "shortestSteps": 13,
+            "efficiency": 0.056768558951965066,
+            "return": -430
+          },
+          {
+            "start": 56,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 12,
+            "efficiency": 0,
+            "return": -497
+          },
+          {
+            "start": 57,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 11,
+            "efficiency": 0,
+            "return": -518
+          },
+          {
+            "start": 58,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 10,
+            "efficiency": 0,
+            "return": -482.3
+          },
+          {
+            "start": 59,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 9,
+            "efficiency": 0,
+            "return": -542
+          },
+          {
+            "start": 60,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 8,
+            "efficiency": 0,
+            "return": -520.5999999999999
+          },
+          {
+            "start": 61,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 7,
+            "efficiency": 0,
+            "return": -508.7999999999997
+          },
+          {
+            "start": 62,
+            "success": true,
+            "steps": 72,
+            "shortestSteps": 6,
+            "efficiency": 0.08333333333333333,
+            "return": -101
+          }
+        ]
+      },
+      "evaluations": [
+        {
+          "trainingSeed": 42,
+          "seed": 91827,
+          "methodology": "Greedy trained policy (uniform random baseline), one rollout from every non-goal cell connected to the goal; episode cap = 4 × cell count. Efficiency is shortest unweighted path length / actual steps; failures score 0. Hazards may justify longer routes.",
+          "reachableStarts": 45,
+          "successes": 45,
+          "successRate": 1,
+          "meanEfficiency": 0.9842680776014109,
+          "meanSteps": 7.377777777777778,
+          "runs": [
+            {
+              "start": 0,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 1,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 2,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 3,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 4,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 5,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 6,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 7,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 9,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 13,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 17,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 18,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 19,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 20,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24.85
+            },
+            {
+              "start": 22,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 23,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 5,
+              "efficiency": 0.7142857142857143,
+              "return": 29
+            },
+            {
+              "start": 24,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 25,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 26,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 27,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 29,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 31,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 34,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 35,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 36,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24
+            },
+            {
+              "start": 38,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 39,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 40,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 42,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 43,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 44,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 45,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 23
+            },
+            {
+              "start": 49,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 50,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 8,
+              "efficiency": 0.8,
+              "return": 26
+            },
+            {
+              "start": 51,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 7,
+              "efficiency": 0.7777777777777778,
+              "return": 27
+            },
+            {
+              "start": 53,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 54,
+              "success": true,
+              "steps": 14,
+              "shortestSteps": 14,
+              "efficiency": 1,
+              "return": 22
+            },
+            {
+              "start": 55,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 23
+            },
+            {
+              "start": 56,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24
+            },
+            {
+              "start": 57,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 58,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 59,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 60,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 61,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 62,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            }
+          ]
+        },
+        {
+          "trainingSeed": 2026,
+          "seed": 91827,
+          "methodology": "Greedy trained policy (uniform random baseline), one rollout from every non-goal cell connected to the goal; episode cap = 4 × cell count. Efficiency is shortest unweighted path length / actual steps; failures score 0. Hazards may justify longer routes.",
+          "reachableStarts": 45,
+          "successes": 45,
+          "successRate": 1,
+          "meanEfficiency": 0.9842680776014109,
+          "meanSteps": 7.377777777777778,
+          "runs": [
+            {
+              "start": 0,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 1,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 2,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 3,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 4,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 5,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 6,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 7,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 9,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 13,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 17,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 18,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 19,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 20,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24.85
+            },
+            {
+              "start": 22,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 23,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 5,
+              "efficiency": 0.7142857142857143,
+              "return": 29
+            },
+            {
+              "start": 24,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 25,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 26,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 27,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 29,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 31,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 34,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 35,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 36,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24
+            },
+            {
+              "start": 38,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 39,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 40,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 42,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 43,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 44,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 45,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 23
+            },
+            {
+              "start": 49,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 50,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 8,
+              "efficiency": 0.8,
+              "return": 26
+            },
+            {
+              "start": 51,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 7,
+              "efficiency": 0.7777777777777778,
+              "return": 27
+            },
+            {
+              "start": 53,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 54,
+              "success": true,
+              "steps": 14,
+              "shortestSteps": 14,
+              "efficiency": 1,
+              "return": 22
+            },
+            {
+              "start": 55,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 23
+            },
+            {
+              "start": 56,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24
+            },
+            {
+              "start": 57,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 58,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 59,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 60,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 61,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 62,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            }
+          ]
+        },
+        {
+          "trainingSeed": 8841,
+          "seed": 91827,
+          "methodology": "Greedy trained policy (uniform random baseline), one rollout from every non-goal cell connected to the goal; episode cap = 4 × cell count. Efficiency is shortest unweighted path length / actual steps; failures score 0. Hazards may justify longer routes.",
+          "reachableStarts": 45,
+          "successes": 45,
+          "successRate": 1,
+          "meanEfficiency": 0.9842680776014109,
+          "meanSteps": 7.377777777777778,
+          "runs": [
+            {
+              "start": 0,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 1,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 2,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 3,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 4,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 5,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 6,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 7,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 9,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 13,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 17,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 18,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 19,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 20,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24.85
+            },
+            {
+              "start": 22,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 23,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 5,
+              "efficiency": 0.7142857142857143,
+              "return": 29
+            },
+            {
+              "start": 24,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 25,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 26,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 27,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 29,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 31,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 34,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 35,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 36,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24
+            },
+            {
+              "start": 38,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 39,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 40,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 42,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 43,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 44,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 45,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 23
+            },
+            {
+              "start": 49,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 50,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 8,
+              "efficiency": 0.8,
+              "return": 26
+            },
+            {
+              "start": 51,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 7,
+              "efficiency": 0.7777777777777778,
+              "return": 27
+            },
+            {
+              "start": 53,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 54,
+              "success": true,
+              "steps": 14,
+              "shortestSteps": 14,
+              "efficiency": 1,
+              "return": 22
+            },
+            {
+              "start": 55,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 23
+            },
+            {
+              "start": 56,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24
+            },
+            {
+              "start": 57,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 58,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 59,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 60,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 61,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 62,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "switchbacks",
+      "name": "The long way home",
+      "baseline": {
+        "seed": 91827,
+        "methodology": "Greedy trained policy (uniform random baseline), one rollout from every non-goal cell connected to the goal; episode cap = 4 × cell count. Efficiency is shortest unweighted path length / actual steps; failures score 0. Hazards may justify longer routes.",
+        "reachableStarts": 41,
+        "successes": 14,
+        "successRate": 0.34146341463414637,
+        "meanEfficiency": 0.03789590281497109,
+        "meanSteps": 203.58536585365854,
+        "runs": [
+          {
+            "start": 1,
+            "success": true,
+            "steps": 18,
+            "shortestSteps": 1,
+            "efficiency": 0.05555555555555555,
+            "return": 4
+          },
+          {
+            "start": 2,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 2,
+            "efficiency": 0,
+            "return": -518.3499999999998
+          },
+          {
+            "start": 3,
+            "success": true,
+            "steps": 10,
+            "shortestSteps": 3,
+            "efficiency": 0.3,
+            "return": 12
+          },
+          {
+            "start": 4,
+            "success": true,
+            "steps": 83,
+            "shortestSteps": 4,
+            "efficiency": 0.04819277108433735,
+            "return": -137
+          },
+          {
+            "start": 5,
+            "success": true,
+            "steps": 28,
+            "shortestSteps": 5,
+            "efficiency": 0.17857142857142858,
+            "return": -10
+          },
+          {
+            "start": 6,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 6,
+            "efficiency": 0,
+            "return": -518.3
+          },
+          {
+            "start": 7,
+            "success": true,
+            "steps": 33,
+            "shortestSteps": 7,
+            "efficiency": 0.21212121212121213,
+            "return": -33
+          },
+          {
+            "start": 8,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 8,
+            "efficiency": 0,
+            "return": -532.3499999999999
+          },
+          {
+            "start": 13,
+            "success": true,
+            "steps": 91,
+            "shortestSteps": 5,
+            "efficiency": 0.054945054945054944,
+            "return": -163.45
+          },
+          {
+            "start": 17,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 9,
+            "efficiency": 0,
+            "return": -492.4999999999999
+          },
+          {
+            "start": 18,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 10,
+            "efficiency": 0,
+            "return": -530.15
+          },
+          {
+            "start": 19,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 9,
+            "efficiency": 0,
+            "return": -507.64999999999986
+          },
+          {
+            "start": 20,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 8,
+            "efficiency": 0,
+            "return": -510.15
+          },
+          {
+            "start": 21,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 7,
+            "efficiency": 0,
+            "return": -528.6499999999999
+          },
+          {
+            "start": 22,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 6,
+            "efficiency": 0,
+            "return": -534.5999999999999
+          },
+          {
+            "start": 23,
+            "success": true,
+            "steps": 165,
+            "shortestSteps": 7,
+            "efficiency": 0.04242424242424243,
+            "return": -282.8
+          },
+          {
+            "start": 24,
+            "success": true,
+            "steps": 212,
+            "shortestSteps": 8,
+            "efficiency": 0.03773584905660377,
+            "return": -453
+          },
+          {
+            "start": 25,
+            "success": true,
+            "steps": 198,
+            "shortestSteps": 9,
+            "efficiency": 0.045454545454545456,
+            "return": -363
+          },
+          {
+            "start": 26,
+            "success": true,
+            "steps": 45,
+            "shortestSteps": 10,
+            "efficiency": 0.2222222222222222,
+            "return": -47
+          },
+          {
+            "start": 27,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 11,
+            "efficiency": 0,
+            "return": -491.09999999999985
+          },
+          {
+            "start": 32,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 8,
+            "efficiency": 0,
+            "return": -493
+          },
+          {
+            "start": 36,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 12,
+            "efficiency": 0,
+            "return": -536.7999999999998
+          },
+          {
+            "start": 37,
+            "success": true,
+            "steps": 159,
+            "shortestSteps": 13,
+            "efficiency": 0.08176100628930817,
+            "return": -312.6
+          },
+          {
+            "start": 38,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 12,
+            "efficiency": 0,
+            "return": -564
+          },
+          {
+            "start": 39,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 11,
+            "efficiency": 0,
+            "return": -548
+          },
+          {
+            "start": 40,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 10,
+            "efficiency": 0,
+            "return": -571.4999999999998
+          },
+          {
+            "start": 41,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 9,
+            "efficiency": 0,
+            "return": -565
+          },
+          {
+            "start": 42,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 10,
+            "efficiency": 0,
+            "return": -480
+          },
+          {
+            "start": 43,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 11,
+            "efficiency": 0,
+            "return": -538.3999999999999
+          },
+          {
+            "start": 44,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 12,
+            "efficiency": 0,
+            "return": -483.04999999999984
+          },
+          {
+            "start": 48,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 12,
+            "efficiency": 0,
+            "return": -503
+          },
+          {
+            "start": 53,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 13,
+            "efficiency": 0,
+            "return": -587.15
+          },
+          {
+            "start": 54,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 16,
+            "efficiency": 0,
+            "return": -606.15
+          },
+          {
+            "start": 55,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 15,
+            "efficiency": 0,
+            "return": -504.29999999999995
+          },
+          {
+            "start": 56,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 14,
+            "efficiency": 0,
+            "return": -509
+          },
+          {
+            "start": 57,
+            "success": true,
+            "steps": 154,
+            "shortestSteps": 13,
+            "efficiency": 0.08441558441558442,
+            "return": -283
+          },
+          {
+            "start": 58,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 14,
+            "efficiency": 0,
+            "return": -542.7499999999999
+          },
+          {
+            "start": 59,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 15,
+            "efficiency": 0,
+            "return": -541
+          },
+          {
+            "start": 60,
+            "success": true,
+            "steps": 126,
+            "shortestSteps": 16,
+            "efficiency": 0.12698412698412698,
+            "return": -189.15
+          },
+          {
+            "start": 61,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 15,
+            "efficiency": 0,
+            "return": -534
+          },
+          {
+            "start": 62,
+            "success": true,
+            "steps": 221,
+            "shortestSteps": 14,
+            "efficiency": 0.06334841628959276,
+            "return": -391.44999999999993
+          }
+        ]
+      },
+      "evaluations": [
+        {
+          "trainingSeed": 42,
+          "seed": 91827,
+          "methodology": "Greedy trained policy (uniform random baseline), one rollout from every non-goal cell connected to the goal; episode cap = 4 × cell count. Efficiency is shortest unweighted path length / actual steps; failures score 0. Hazards may justify longer routes.",
+          "reachableStarts": 41,
+          "successes": 41,
+          "successRate": 1,
+          "meanEfficiency": 0.9882261847828564,
+          "meanSteps": 9.951219512195122,
+          "runs": [
+            {
+              "start": 1,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 2,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 3,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 4,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 5,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 6,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 7,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 8,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 13,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 17,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 18,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26.85
+            },
+            {
+              "start": 19,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27.85
+            },
+            {
+              "start": 20,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 21,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 22,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 23,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 24,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 25,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 26,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 27,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25.85
+            },
+            {
+              "start": 32,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 36,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24.85
+            },
+            {
+              "start": 37,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 23.85
+            },
+            {
+              "start": 38,
+              "success": true,
+              "steps": 14,
+              "shortestSteps": 12,
+              "efficiency": 0.8571428571428571,
+              "return": 22.85
+            },
+            {
+              "start": 39,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 40,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 41,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 42,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 43,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 44,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24
+            },
+            {
+              "start": 48,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 17
+            },
+            {
+              "start": 53,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 23
+            },
+            {
+              "start": 54,
+              "success": true,
+              "steps": 16,
+              "shortestSteps": 16,
+              "efficiency": 1,
+              "return": 13
+            },
+            {
+              "start": 55,
+              "success": true,
+              "steps": 15,
+              "shortestSteps": 15,
+              "efficiency": 1,
+              "return": 14
+            },
+            {
+              "start": 56,
+              "success": true,
+              "steps": 14,
+              "shortestSteps": 14,
+              "efficiency": 1,
+              "return": 15
+            },
+            {
+              "start": 57,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 16
+            },
+            {
+              "start": 58,
+              "success": true,
+              "steps": 18,
+              "shortestSteps": 14,
+              "efficiency": 0.7777777777777778,
+              "return": 18
+            },
+            {
+              "start": 59,
+              "success": true,
+              "steps": 17,
+              "shortestSteps": 15,
+              "efficiency": 0.8823529411764706,
+              "return": 19
+            },
+            {
+              "start": 60,
+              "success": true,
+              "steps": 16,
+              "shortestSteps": 16,
+              "efficiency": 1,
+              "return": 20
+            },
+            {
+              "start": 61,
+              "success": true,
+              "steps": 15,
+              "shortestSteps": 15,
+              "efficiency": 1,
+              "return": 21
+            },
+            {
+              "start": 62,
+              "success": true,
+              "steps": 14,
+              "shortestSteps": 14,
+              "efficiency": 1,
+              "return": 22
+            }
+          ]
+        },
+        {
+          "trainingSeed": 2026,
+          "seed": 91827,
+          "methodology": "Greedy trained policy (uniform random baseline), one rollout from every non-goal cell connected to the goal; episode cap = 4 × cell count. Efficiency is shortest unweighted path length / actual steps; failures score 0. Hazards may justify longer routes.",
+          "reachableStarts": 41,
+          "successes": 41,
+          "successRate": 1,
+          "meanEfficiency": 0.9882261847828564,
+          "meanSteps": 9.951219512195122,
+          "runs": [
+            {
+              "start": 1,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 2,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 3,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 4,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 5,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 6,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 7,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 8,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 13,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 17,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 18,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26.85
+            },
+            {
+              "start": 19,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27.85
+            },
+            {
+              "start": 20,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 21,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 22,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 23,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 24,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 25,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 26,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 27,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25.85
+            },
+            {
+              "start": 32,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 36,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24.85
+            },
+            {
+              "start": 37,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 23.85
+            },
+            {
+              "start": 38,
+              "success": true,
+              "steps": 14,
+              "shortestSteps": 12,
+              "efficiency": 0.8571428571428571,
+              "return": 22.85
+            },
+            {
+              "start": 39,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 40,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 41,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 42,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 43,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 44,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24
+            },
+            {
+              "start": 48,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 17
+            },
+            {
+              "start": 53,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 23
+            },
+            {
+              "start": 54,
+              "success": true,
+              "steps": 16,
+              "shortestSteps": 16,
+              "efficiency": 1,
+              "return": 13
+            },
+            {
+              "start": 55,
+              "success": true,
+              "steps": 15,
+              "shortestSteps": 15,
+              "efficiency": 1,
+              "return": 14
+            },
+            {
+              "start": 56,
+              "success": true,
+              "steps": 14,
+              "shortestSteps": 14,
+              "efficiency": 1,
+              "return": 15
+            },
+            {
+              "start": 57,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 16
+            },
+            {
+              "start": 58,
+              "success": true,
+              "steps": 18,
+              "shortestSteps": 14,
+              "efficiency": 0.7777777777777778,
+              "return": 18
+            },
+            {
+              "start": 59,
+              "success": true,
+              "steps": 17,
+              "shortestSteps": 15,
+              "efficiency": 0.8823529411764706,
+              "return": 19
+            },
+            {
+              "start": 60,
+              "success": true,
+              "steps": 16,
+              "shortestSteps": 16,
+              "efficiency": 1,
+              "return": 20
+            },
+            {
+              "start": 61,
+              "success": true,
+              "steps": 15,
+              "shortestSteps": 15,
+              "efficiency": 1,
+              "return": 21
+            },
+            {
+              "start": 62,
+              "success": true,
+              "steps": 14,
+              "shortestSteps": 14,
+              "efficiency": 1,
+              "return": 22
+            }
+          ]
+        },
+        {
+          "trainingSeed": 8841,
+          "seed": 91827,
+          "methodology": "Greedy trained policy (uniform random baseline), one rollout from every non-goal cell connected to the goal; episode cap = 4 × cell count. Efficiency is shortest unweighted path length / actual steps; failures score 0. Hazards may justify longer routes.",
+          "reachableStarts": 41,
+          "successes": 41,
+          "successRate": 1,
+          "meanEfficiency": 0.9882261847828564,
+          "meanSteps": 9.951219512195122,
+          "runs": [
+            {
+              "start": 1,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 2,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 3,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 4,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 5,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 6,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 7,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 8,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 13,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 17,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 18,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26.85
+            },
+            {
+              "start": 19,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27.85
+            },
+            {
+              "start": 20,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 21,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 22,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 23,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 24,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 25,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 26,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 27,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25.85
+            },
+            {
+              "start": 32,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 36,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24.85
+            },
+            {
+              "start": 37,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 23.85
+            },
+            {
+              "start": 38,
+              "success": true,
+              "steps": 14,
+              "shortestSteps": 12,
+              "efficiency": 0.8571428571428571,
+              "return": 22.85
+            },
+            {
+              "start": 39,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 40,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 41,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 42,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 43,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 44,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 24
+            },
+            {
+              "start": 48,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 17
+            },
+            {
+              "start": 53,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 23
+            },
+            {
+              "start": 54,
+              "success": true,
+              "steps": 16,
+              "shortestSteps": 16,
+              "efficiency": 1,
+              "return": 13
+            },
+            {
+              "start": 55,
+              "success": true,
+              "steps": 15,
+              "shortestSteps": 15,
+              "efficiency": 1,
+              "return": 14
+            },
+            {
+              "start": 56,
+              "success": true,
+              "steps": 14,
+              "shortestSteps": 14,
+              "efficiency": 1,
+              "return": 15
+            },
+            {
+              "start": 57,
+              "success": true,
+              "steps": 13,
+              "shortestSteps": 13,
+              "efficiency": 1,
+              "return": 16
+            },
+            {
+              "start": 58,
+              "success": true,
+              "steps": 18,
+              "shortestSteps": 14,
+              "efficiency": 0.7777777777777778,
+              "return": 18
+            },
+            {
+              "start": 59,
+              "success": true,
+              "steps": 17,
+              "shortestSteps": 15,
+              "efficiency": 0.8823529411764706,
+              "return": 19
+            },
+            {
+              "start": 60,
+              "success": true,
+              "steps": 16,
+              "shortestSteps": 16,
+              "efficiency": 1,
+              "return": 20
+            },
+            {
+              "start": 61,
+              "success": true,
+              "steps": 15,
+              "shortestSteps": 15,
+              "efficiency": 1,
+              "return": 21
+            },
+            {
+              "start": 62,
+              "success": true,
+              "steps": 14,
+              "shortestSteps": 14,
+              "efficiency": 1,
+              "return": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crossroads",
+      "name": "The risky shortcut",
+      "baseline": {
+        "seed": 91827,
+        "methodology": "Greedy trained policy (uniform random baseline), one rollout from every non-goal cell connected to the goal; episode cap = 4 × cell count. Efficiency is shortest unweighted path length / actual steps; failures score 0. Hazards may justify longer routes.",
+        "reachableStarts": 47,
+        "successes": 35,
+        "successRate": 0.7446808510638298,
+        "meanEfficiency": 0.13527130188045247,
+        "meanSteps": 126.46808510638297,
+        "runs": [
+          {
+            "start": 0,
+            "success": true,
+            "steps": 88,
+            "shortestSteps": 11,
+            "efficiency": 0.125,
+            "return": -235.74999999999994
+          },
+          {
+            "start": 1,
+            "success": true,
+            "steps": 164,
+            "shortestSteps": 10,
+            "efficiency": 0.06097560975609756,
+            "return": -324.35
+          },
+          {
+            "start": 2,
+            "success": true,
+            "steps": 93,
+            "shortestSteps": 9,
+            "efficiency": 0.0967741935483871,
+            "return": -303.5999999999999
+          },
+          {
+            "start": 3,
+            "success": true,
+            "steps": 165,
+            "shortestSteps": 8,
+            "efficiency": 0.048484848484848485,
+            "return": -402.45000000000005
+          },
+          {
+            "start": 4,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 7,
+            "efficiency": 0,
+            "return": -765.75
+          },
+          {
+            "start": 5,
+            "success": true,
+            "steps": 116,
+            "shortestSteps": 6,
+            "efficiency": 0.05172413793103448,
+            "return": -245.3
+          },
+          {
+            "start": 6,
+            "success": true,
+            "steps": 125,
+            "shortestSteps": 5,
+            "efficiency": 0.04,
+            "return": -270.05
+          },
+          {
+            "start": 7,
+            "success": true,
+            "steps": 154,
+            "shortestSteps": 4,
+            "efficiency": 0.025974025974025976,
+            "return": -339.6
+          },
+          {
+            "start": 8,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 3,
+            "efficiency": 0,
+            "return": -760.3499999999999
+          },
+          {
+            "start": 9,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 12,
+            "efficiency": 0,
+            "return": -523.4499999999999
+          },
+          {
+            "start": 11,
+            "success": true,
+            "steps": 64,
+            "shortestSteps": 8,
+            "efficiency": 0.125,
+            "return": -102.30000000000001
+          },
+          {
+            "start": 13,
+            "success": true,
+            "steps": 24,
+            "shortestSteps": 6,
+            "efficiency": 0.25,
+            "return": -78
+          },
+          {
+            "start": 15,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 4,
+            "efficiency": 0,
+            "return": -570.2999999999997
+          },
+          {
+            "start": 17,
+            "success": true,
+            "steps": 7,
+            "shortestSteps": 2,
+            "efficiency": 0.2857142857142857,
+            "return": 23
+          },
+          {
+            "start": 18,
+            "success": true,
+            "steps": 174,
+            "shortestSteps": 11,
+            "efficiency": 0.06321839080459771,
+            "return": -273.7999999999999
+          },
+          {
+            "start": 20,
+            "success": true,
+            "steps": 115,
+            "shortestSteps": 7,
+            "efficiency": 0.06086956521739131,
+            "return": -296.89999999999986
+          },
+          {
+            "start": 21,
+            "success": true,
+            "steps": 59,
+            "shortestSteps": 6,
+            "efficiency": 0.1016949152542373,
+            "return": -75.35
+          },
+          {
+            "start": 22,
+            "success": true,
+            "steps": 54,
+            "shortestSteps": 5,
+            "efficiency": 0.09259259259259259,
+            "return": -105.20000000000005
+          },
+          {
+            "start": 23,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 4,
+            "efficiency": 0,
+            "return": -607
+          },
+          {
+            "start": 24,
+            "success": true,
+            "steps": 13,
+            "shortestSteps": 3,
+            "efficiency": 0.23076923076923078,
+            "return": -10
+          },
+          {
+            "start": 26,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 1,
+            "efficiency": 0,
+            "return": -584.7499999999999
+          },
+          {
+            "start": 27,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 10,
+            "efficiency": 0,
+            "return": -661.7499999999999
+          },
+          {
+            "start": 28,
+            "success": true,
+            "steps": 73,
+            "shortestSteps": 9,
+            "efficiency": 0.1232876712328767,
+            "return": -79.65000000000003
+          },
+          {
+            "start": 29,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 8,
+            "efficiency": 0,
+            "return": -856.9499999999997
+          },
+          {
+            "start": 33,
+            "success": true,
+            "steps": 6,
+            "shortestSteps": 2,
+            "efficiency": 0.3333333333333333,
+            "return": 9
+          },
+          {
+            "start": 34,
+            "success": true,
+            "steps": 1,
+            "shortestSteps": 1,
+            "efficiency": 1,
+            "return": 35
+          },
+          {
+            "start": 36,
+            "success": true,
+            "steps": 71,
+            "shortestSteps": 11,
+            "efficiency": 0.15492957746478872,
+            "return": -83
+          },
+          {
+            "start": 38,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 7,
+            "efficiency": 0,
+            "return": -483.4999999999999
+          },
+          {
+            "start": 39,
+            "success": true,
+            "steps": 163,
+            "shortestSteps": 6,
+            "efficiency": 0.03680981595092025,
+            "return": -418.15
+          },
+          {
+            "start": 40,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 5,
+            "efficiency": 0,
+            "return": -478.5499999999997
+          },
+          {
+            "start": 41,
+            "success": true,
+            "steps": 45,
+            "shortestSteps": 4,
+            "efficiency": 0.08888888888888889,
+            "return": -44.45
+          },
+          {
+            "start": 42,
+            "success": true,
+            "steps": 63,
+            "shortestSteps": 3,
+            "efficiency": 0.047619047619047616,
+            "return": -86.15
+          },
+          {
+            "start": 44,
+            "success": true,
+            "steps": 1,
+            "shortestSteps": 1,
+            "efficiency": 1,
+            "return": 35
+          },
+          {
+            "start": 45,
+            "success": true,
+            "steps": 238,
+            "shortestSteps": 12,
+            "efficiency": 0.05042016806722689,
+            "return": -436.64999999999975
+          },
+          {
+            "start": 47,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 8,
+            "efficiency": 0,
+            "return": -556.3499999999999
+          },
+          {
+            "start": 49,
+            "success": true,
+            "steps": 93,
+            "shortestSteps": 6,
+            "efficiency": 0.06451612903225806,
+            "return": -233.75
+          },
+          {
+            "start": 51,
+            "success": true,
+            "steps": 106,
+            "shortestSteps": 4,
+            "efficiency": 0.03773584905660377,
+            "return": -155.20000000000002
+          },
+          {
+            "start": 53,
+            "success": true,
+            "steps": 8,
+            "shortestSteps": 2,
+            "efficiency": 0.25,
+            "return": 20
+          },
+          {
+            "start": 54,
+            "success": true,
+            "steps": 92,
+            "shortestSteps": 11,
+            "efficiency": 0.11956521739130435,
+            "return": -144.45
+          },
+          {
+            "start": 55,
+            "success": true,
+            "steps": 73,
+            "shortestSteps": 10,
+            "efficiency": 0.136986301369863,
+            "return": -111
+          },
+          {
+            "start": 56,
+            "success": true,
+            "steps": 19,
+            "shortestSteps": 9,
+            "efficiency": 0.47368421052631576,
+            "return": 12.399999999999999
+          },
+          {
+            "start": 57,
+            "success": true,
+            "steps": 78,
+            "shortestSteps": 8,
+            "efficiency": 0.10256410256410256,
+            "return": -84.9
+          },
+          {
+            "start": 58,
+            "success": false,
+            "steps": 252,
+            "shortestSteps": 7,
+            "efficiency": 0,
+            "return": -485.59999999999997
+          },
+          {
+            "start": 59,
+            "success": true,
+            "steps": 113,
+            "shortestSteps": 6,
+            "efficiency": 0.05309734513274336,
+            "return": -158.95000000000002
+          },
+          {
+            "start": 60,
+            "success": true,
+            "steps": 47,
+            "shortestSteps": 5,
+            "efficiency": 0.10638297872340426,
+            "return": -37.05
+          },
+          {
+            "start": 61,
+            "success": true,
+            "steps": 209,
+            "shortestSteps": 4,
+            "efficiency": 0.019138755980861243,
+            "return": -294.29999999999995
+          },
+          {
+            "start": 62,
+            "success": true,
+            "steps": 6,
+            "shortestSteps": 3,
+            "efficiency": 0.5,
+            "return": 24
+          }
+        ]
+      },
+      "evaluations": [
+        {
+          "trainingSeed": 42,
+          "seed": 91827,
+          "methodology": "Greedy trained policy (uniform random baseline), one rollout from every non-goal cell connected to the goal; episode cap = 4 × cell count. Efficiency is shortest unweighted path length / actual steps; failures score 0. Hazards may justify longer routes.",
+          "reachableStarts": 47,
+          "successes": 47,
+          "successRate": 1,
+          "meanEfficiency": 0.9606382978723406,
+          "meanSteps": 6.595744680851064,
+          "runs": [
+            {
+              "start": 0,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 1,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 2,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 3,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 4,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 5,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 6,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 7,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 8,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 9,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 26.549999999999997
+            },
+            {
+              "start": 11,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 8,
+              "efficiency": 0.8,
+              "return": 26
+            },
+            {
+              "start": 13,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 6,
+              "efficiency": 0.75,
+              "return": 28
+            },
+            {
+              "start": 15,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 4,
+              "efficiency": 0.6666666666666666,
+              "return": 30
+            },
+            {
+              "start": 17,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 18,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 27.549999999999997
+            },
+            {
+              "start": 20,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 7,
+              "efficiency": 0.7777777777777778,
+              "return": 29.55
+            },
+            {
+              "start": 21,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 6,
+              "efficiency": 0.6,
+              "return": 21.549999999999997
+            },
+            {
+              "start": 22,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 5,
+              "efficiency": 0.5555555555555556,
+              "return": 27
+            },
+            {
+              "start": 23,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 24,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 26,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 27,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 28.55
+            },
+            {
+              "start": 28,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 29.55
+            },
+            {
+              "start": 29,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 30.55
+            },
+            {
+              "start": 33,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 34,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 36,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 27.549999999999997
+            },
+            {
+              "start": 38,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 30.7
+            },
+            {
+              "start": 39,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 31.7
+            },
+            {
+              "start": 40,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31.85
+            },
+            {
+              "start": 41,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32.85
+            },
+            {
+              "start": 42,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 44,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 45,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 26.549999999999997
+            },
+            {
+              "start": 47,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 30.55
+            },
+            {
+              "start": 49,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 31.7
+            },
+            {
+              "start": 51,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32.85
+            },
+            {
+              "start": 53,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 54,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 27.549999999999997
+            },
+            {
+              "start": 55,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 28.55
+            },
+            {
+              "start": 56,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 29.55
+            },
+            {
+              "start": 57,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 29.7
+            },
+            {
+              "start": 58,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 30.7
+            },
+            {
+              "start": 59,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30.85
+            },
+            {
+              "start": 60,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31.85
+            },
+            {
+              "start": 61,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 62,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            }
+          ]
+        },
+        {
+          "trainingSeed": 2026,
+          "seed": 91827,
+          "methodology": "Greedy trained policy (uniform random baseline), one rollout from every non-goal cell connected to the goal; episode cap = 4 × cell count. Efficiency is shortest unweighted path length / actual steps; failures score 0. Hazards may justify longer routes.",
+          "reachableStarts": 47,
+          "successes": 47,
+          "successRate": 1,
+          "meanEfficiency": 0.9606382978723406,
+          "meanSteps": 6.595744680851064,
+          "runs": [
+            {
+              "start": 0,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 1,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 2,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 3,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 4,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 5,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 6,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 7,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 8,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 9,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 26.549999999999997
+            },
+            {
+              "start": 11,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 8,
+              "efficiency": 0.8,
+              "return": 26
+            },
+            {
+              "start": 13,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 6,
+              "efficiency": 0.75,
+              "return": 28
+            },
+            {
+              "start": 15,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 4,
+              "efficiency": 0.6666666666666666,
+              "return": 30
+            },
+            {
+              "start": 17,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 18,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 27.549999999999997
+            },
+            {
+              "start": 20,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 7,
+              "efficiency": 0.7777777777777778,
+              "return": 29.55
+            },
+            {
+              "start": 21,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 6,
+              "efficiency": 0.6,
+              "return": 21.549999999999997
+            },
+            {
+              "start": 22,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 5,
+              "efficiency": 0.5555555555555556,
+              "return": 27
+            },
+            {
+              "start": 23,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 24,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 26,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 27,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 28.55
+            },
+            {
+              "start": 28,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 29.55
+            },
+            {
+              "start": 29,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 30.55
+            },
+            {
+              "start": 33,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 34,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 36,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 27.549999999999997
+            },
+            {
+              "start": 38,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 30.7
+            },
+            {
+              "start": 39,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 31.7
+            },
+            {
+              "start": 40,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31.85
+            },
+            {
+              "start": 41,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32.85
+            },
+            {
+              "start": 42,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 44,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 45,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 26.549999999999997
+            },
+            {
+              "start": 47,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 30.55
+            },
+            {
+              "start": 49,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 31.7
+            },
+            {
+              "start": 51,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32.85
+            },
+            {
+              "start": 53,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 54,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 27.549999999999997
+            },
+            {
+              "start": 55,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 28.55
+            },
+            {
+              "start": 56,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 29.55
+            },
+            {
+              "start": 57,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 29.7
+            },
+            {
+              "start": 58,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 30.7
+            },
+            {
+              "start": 59,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30.85
+            },
+            {
+              "start": 60,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31.85
+            },
+            {
+              "start": 61,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 62,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            }
+          ]
+        },
+        {
+          "trainingSeed": 8841,
+          "seed": 91827,
+          "methodology": "Greedy trained policy (uniform random baseline), one rollout from every non-goal cell connected to the goal; episode cap = 4 × cell count. Efficiency is shortest unweighted path length / actual steps; failures score 0. Hazards may justify longer routes.",
+          "reachableStarts": 47,
+          "successes": 47,
+          "successRate": 1,
+          "meanEfficiency": 0.9606382978723406,
+          "meanSteps": 6.595744680851064,
+          "runs": [
+            {
+              "start": 0,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 1,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 26
+            },
+            {
+              "start": 2,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 27
+            },
+            {
+              "start": 3,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 28
+            },
+            {
+              "start": 4,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 29
+            },
+            {
+              "start": 5,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30
+            },
+            {
+              "start": 6,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31
+            },
+            {
+              "start": 7,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 8,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 9,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 26.549999999999997
+            },
+            {
+              "start": 11,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 8,
+              "efficiency": 0.8,
+              "return": 26
+            },
+            {
+              "start": 13,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 6,
+              "efficiency": 0.75,
+              "return": 28
+            },
+            {
+              "start": 15,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 4,
+              "efficiency": 0.6666666666666666,
+              "return": 30
+            },
+            {
+              "start": 17,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 18,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 27.549999999999997
+            },
+            {
+              "start": 20,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 7,
+              "efficiency": 0.7777777777777778,
+              "return": 29.55
+            },
+            {
+              "start": 21,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 6,
+              "efficiency": 0.6,
+              "return": 21.549999999999997
+            },
+            {
+              "start": 22,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 5,
+              "efficiency": 0.5555555555555556,
+              "return": 27
+            },
+            {
+              "start": 23,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 25
+            },
+            {
+              "start": 24,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 26,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 27,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 28.55
+            },
+            {
+              "start": 28,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 29.55
+            },
+            {
+              "start": 29,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 30.55
+            },
+            {
+              "start": 33,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 34,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 36,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 27.549999999999997
+            },
+            {
+              "start": 38,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 30.7
+            },
+            {
+              "start": 39,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 31.7
+            },
+            {
+              "start": 40,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31.85
+            },
+            {
+              "start": 41,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32.85
+            },
+            {
+              "start": 42,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            },
+            {
+              "start": 44,
+              "success": true,
+              "steps": 1,
+              "shortestSteps": 1,
+              "efficiency": 1,
+              "return": 35
+            },
+            {
+              "start": 45,
+              "success": true,
+              "steps": 12,
+              "shortestSteps": 12,
+              "efficiency": 1,
+              "return": 26.549999999999997
+            },
+            {
+              "start": 47,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 30.55
+            },
+            {
+              "start": 49,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 31.7
+            },
+            {
+              "start": 51,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32.85
+            },
+            {
+              "start": 53,
+              "success": true,
+              "steps": 2,
+              "shortestSteps": 2,
+              "efficiency": 1,
+              "return": 34
+            },
+            {
+              "start": 54,
+              "success": true,
+              "steps": 11,
+              "shortestSteps": 11,
+              "efficiency": 1,
+              "return": 27.549999999999997
+            },
+            {
+              "start": 55,
+              "success": true,
+              "steps": 10,
+              "shortestSteps": 10,
+              "efficiency": 1,
+              "return": 28.55
+            },
+            {
+              "start": 56,
+              "success": true,
+              "steps": 9,
+              "shortestSteps": 9,
+              "efficiency": 1,
+              "return": 29.55
+            },
+            {
+              "start": 57,
+              "success": true,
+              "steps": 8,
+              "shortestSteps": 8,
+              "efficiency": 1,
+              "return": 29.7
+            },
+            {
+              "start": 58,
+              "success": true,
+              "steps": 7,
+              "shortestSteps": 7,
+              "efficiency": 1,
+              "return": 30.7
+            },
+            {
+              "start": 59,
+              "success": true,
+              "steps": 6,
+              "shortestSteps": 6,
+              "efficiency": 1,
+              "return": 30.85
+            },
+            {
+              "start": 60,
+              "success": true,
+              "steps": 5,
+              "shortestSteps": 5,
+              "efficiency": 1,
+              "return": 31.85
+            },
+            {
+              "start": 61,
+              "success": true,
+              "steps": 4,
+              "shortestSteps": 4,
+              "efficiency": 1,
+              "return": 32
+            },
+            {
+              "start": 62,
+              "success": true,
+              "steps": 3,
+              "shortestSteps": 3,
+              "efficiency": 1,
+              "return": 33
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
