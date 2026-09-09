@@ -1,0 +1,105 @@
+import { expect } from '@playwright/test';
+import assert from 'node:assert/strict';
+import { mkdir, readFile } from 'node:fs/promises';
+import { openBrowser } from './browser-helpers.mjs';
+import { verifyImportRaces } from './import-race-regression.mjs';
+const app = await openBrowser(), { page, browser } = app, errors = [];
+page.on('pageerror', error => errors.push(error.message));
+const output = key => page.locator(`[data-output="${key}"]`);
+try {
+  await mkdir('test-results', { recursive: true });
+  await expect(output('success')).toHaveText('100%');
+  await page.locator('[data-field="speed"]').selectOption('2');
+  await page.locator('[data-action="play"]').click();
+  await expect(page.locator('[data-action="play"]')).toHaveText('Pause');
+  await page.locator('[data-action="play"]').click();
+  const pausedSteps = await output('steps').textContent();
+  await page.waitForTimeout(550); await expect(output('steps')).toHaveText(pausedSteps);
+  await page.locator('[data-field="speed"]').selectOption('20');
+  await page.locator('[data-action="play"]').click();
+  await expect(output('run')).toContainText('Home!', { timeout: 10000 });
+  await page.locator('[data-action="reset"]').click();
+  await page.locator('[data-action="step"]').click();
+  await expect(output('steps')).toContainText('1 /');
+  await page.locator('[data-field="compare"]').check();
+  await expect(page.locator('.tp-compare-results')).toBeVisible();
+  await expect(output('learned-result')).toContainText('Home in');
+  await page.locator('[data-view="value"]').click();
+  await expect(output('heat-legend')).toContainText('Brighter');
+  console.log('PASS: trained run, step/reset, comparison, value view');
+
+  await page.locator('[data-brush="wall"]').click();
+  await page.locator('[data-cell="2"]').click();
+  await expect(page.locator('.teach-pet')).toHaveAttribute('data-policy', 'untrained');
+  await expect(page.locator('[data-cell="2"]')).toHaveClass(/tp-cell-wall/);
+  await page.locator('[data-brush="treat"]').click();
+  await page.locator('[data-cell="3"]').focus(); await page.keyboard.press('ArrowRight'); await page.keyboard.press('Enter');
+  await expect(page.locator('[data-cell="4"]')).toHaveClass(/tp-cell-treat/);
+  await page.locator('[data-action="train"]').click();
+  await expect(output('training-status')).toContainText('Lesson complete', { timeout: 20000 });
+  await expect(output('success')).toHaveText('100%');
+  await page.locator('[data-action="play"]').click();
+  await expect(output('run')).toContainText('Home!', { timeout: 10000 });
+  console.log('PASS: mouse/keyboard edits invalidate policy; actual worker retraining and learned run');
+
+  await page.locator('.tp-share summary').click();
+  const downloadEvent = page.waitForEvent('download'); await page.locator('[data-action="export"]').click();
+  const download = await downloadEvent; await download.saveAs('test-results/roundtrip.json');
+  const payload = JSON.parse(await readFile('test-results/roundtrip.json', 'utf8')); assert.equal(payload.policy.q.length, 252);
+  await page.locator('[data-action="restore"]').click();
+  await page.locator('.tp-file').setInputFiles('test-results/roundtrip.json');
+  await expect(output('file-status')).toContainText('matching policy imported');
+  await expect(output('policy-source')).toHaveText('Imported policy'); await expect(output('success')).toHaveText('100%');
+  await page.locator('.tp-file').setInputFiles({ name: 'bad.json', mimeType: 'application/json', buffer: Buffer.from('{"format":"wrong"}') });
+  await expect(output('file-status')).toContainText('format version 1');
+  await page.locator('.tp-file').setInputFiles({ name: 'not-json.json', mimeType: 'application/json', buffer: Buffer.from('not JSON') });
+  await expect(output('file-status')).toContainText('not valid JSON');
+  console.log('PASS: real download/import roundtrip and invalid file errors');
+
+  await page.locator('.tp-rewards summary').click();
+  await page.locator('[data-field="hazard"]').fill('-20'); await page.locator('[data-field="hazard"]').blur();
+  await expect(page.locator('.teach-pet')).toHaveAttribute('data-policy', 'untrained');
+  await expect(output('hazard-legend')).toContainText('-20');
+  await page.locator('[data-field="treat"]').fill('5'); await page.locator('[data-field="treat"]').blur();
+  await expect(output('reward-status')).toContainText('must be');
+  await page.locator('[data-field="treat"]').fill('-0.15'); await page.locator('[data-field="treat"]').blur();
+  await page.locator('[data-field="episodes"]').selectOption('30000');
+  await page.locator('[data-action="train"]').click(); await page.locator('[data-action="cancel"]').click();
+  await expect(output('training-status')).toContainText('cancelled');
+  await expect(page.locator('.teach-pet')).toHaveAttribute('data-training', 'false');
+  await page.waitForTimeout(700); await expect(page.locator('.teach-pet')).toHaveAttribute('data-policy', 'untrained');
+  await page.locator('[data-action="train"]').click();
+  await page.locator('[data-field="preset"]').selectOption('switchbacks');
+  await page.waitForTimeout(700); await expect(output('description')).toContainText('Long corridors'); await expect(output('success')).toHaveText('100%');
+  console.log('PASS: reward edits, cancellation, stale worker output ignored after preset change');
+
+  await page.locator('[data-field="seed"]').fill('-1');
+  await page.locator('[data-action="train"]').click();
+  await expect(output('training-status')).toContainText('whole-number seed');
+  await expect(page.locator('.teach-pet')).toHaveAttribute('data-training', 'false');
+  await page.locator('[data-field="seed"]').fill('42');
+
+  const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true, reducedMotion: 'reduce' });
+  mobile.on('pageerror', e => errors.push(e.message)); await mobile.goto(app.url);
+  assert.equal(await mobile.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+  await mobile.locator('[data-brush="hazard"]').tap(); await mobile.locator('[data-cell="5"]').tap();
+  await expect(mobile.locator('[data-cell="5"]')).toHaveClass(/tp-cell-hazard/);
+  await mobile.locator('[data-action="train"]').tap();
+  await expect(mobile.locator('[data-output="training-status"]')).toContainText('Lesson complete', { timeout: 20000 });
+  await mobile.screenshot({ path: 'test-results/mobile-390.png', fullPage: true });
+  assert.equal(await mobile.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+  console.log('PASS: 390px touch edit/training and no horizontal overflow');
+
+  await page.goto(app.url);
+  const lifecycle = await page.evaluate(async () => {
+    const { mountExperiment, metadata } = await import('/src/index.js'); const host = document.createElement('div'); document.body.append(host);
+    const tool = mountExperiment(host, { embedded: true }); const hiddenHeader = host.querySelector('.tp-header').hidden;
+    host.querySelector('[data-action="train"]').click(); tool.dispose(); tool.dispose(); host.remove();
+    return { hiddenHeader, removed: !host.children.length, arrays: Array.isArray(metadata.instructions) && Array.isArray(metadata.limitations) };
+  });
+  assert.deepEqual(lifecycle, { hiddenHeader: true, removed: true, arrays: true });
+  await verifyImportRaces(page);
+  assert.deepEqual(errors, []);
+  console.log('PASS: embedded API, dispose during training, no runtime errors');
+  await page.screenshot({ path: 'test-results/desktop.png', fullPage: true });
+} finally { await app.close(); }
